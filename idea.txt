@@ -1,0 +1,15 @@
+// To buy list
+// user, buylist, buyphoto, sharebuylist
+
+// user table
+// id,name,email,password
+
+// buylist table
+// id,userid,title,price,location
+
+// buyphoto table
+// id,buylistid,photo
+
+// sharebuylist table
+// id,userid,buylist,shareuserId
+
