@@ -1,15 +1,8 @@
 const router=require('express').Router();
-const UserController=require('../controllers/users.controller')
-const TodoController=require('../controllers/todos.controller')
+const {checkAuthenticate}=require('../middleware/auth.middleware')
 
-router.get('/users',UserController.index);
-router.post('/users',UserController.create);
-router.put('/users',UserController.edit);
-router.delete('/users',UserController.destroy);
-
-router.get('/todos',TodoController.index);
-router.post('/todos',TodoController.create);
-router.put('/todos',TodoController.edit);
-router.delete('/todos',TodoController.destroy);
+router.use('/',require('./web.routes'))
+router.use('/api',checkAuthenticate,require('./api.routes'))
+router.use('/auth',require('./auth.routes'))
 
 module.exports=router;
